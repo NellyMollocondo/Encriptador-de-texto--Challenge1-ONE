@@ -53,6 +53,7 @@ header h1 {
     background: var(--gray);   
     resize: none;
 }
+
 .container-input textarea::placeholder {
     color: var(--dark-blue);
 }
@@ -67,7 +68,7 @@ header h1 {
     color: var(--gray-400);    
 }
 
-.container-input p span {
+.container-input span {
     margin-right: 5px;
 }
 
@@ -87,6 +88,12 @@ button {
     font-size: 1.6rem;
 }
 
+button:hover {
+    font-weight: 600;
+    opacity: 0.95;
+    box-shadow: 0px 0px 4px var(--dark-blue);
+}
+
 .highlighted-button {
     border:1px solid var(--dark-blue);
     color: var(--white);
@@ -100,25 +107,30 @@ button {
 }
 
 /* Contenedor de salida*/
-.container-output {
+.section-output {
     width: 100%;
-    height: 100%;
+    height: auto;
     margin-bottom: 60px; 
 }
 
-.container-output div {
+.section-output .message {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.section-output .container-output {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: auto;
     padding: 20px;  
     border-radius: 32px;    
     box-shadow: var(--shadow);
     background: var(--white);
 }
 
-.container-output div textarea {
+.section-output div textarea {
     width: 100%;
     height: auto;
     padding: 20px 5px;
@@ -162,33 +174,47 @@ footer {
     }
 }
 
-@media screen and (min-width:1024px){ 
+@media screen and (min-width:1024px){
 
-    button {
-        max-width: 340px;
-    }
-    .container-buttons {
-        justify-content: center;
-    }
-    .container-input {
-        width: 50%;
-    }
-    .container-output {
-        width: 30%;
-        height: 100%;
-        margin: 0;
-    }
-    .container-output div {
-        width: 100%;
-        height: 100%; 
-    }
-    .container-output div textarea {
-        height: 60vh;
-    }
     main {
         display: flex;
         justify-content: center;
         align-items: center;
         gap:30px;
     }
+
+    .container-input {
+        width: 50%;
+    }
+
+    button {
+        max-width: 340px;
+    }
+
+    .container-buttons {
+        justify-content: center;
+    }
+
+    .section-output {
+        display: flex;
+        justify-content: flex-start;
+        width: 30%;
+        height: calc(60vh + 117px);
+        margin: 0;
+    }
+
+    .container-output{
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        height: 400px;
+        background-image: url(./assets/messageImage.png);
+        background-repeat: no-repeat;
+    }   
 }

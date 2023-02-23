@@ -24,7 +24,7 @@
     <main>
         <!-- CONTENT START-->
         <section class="container-input">
-            <textarea name="inputtext" id="" cols="35" rows="25" placeholder="Ingrese el texto aquí" required></textarea>
+            <textarea id="text" name="text" cols="35" rows="25" placeholder="Ingrese el texto aquí" required></textarea>
             
             <p>
                 <span>
@@ -36,25 +36,34 @@
             </p>
 
             <div class="container-buttons">
-                <button class="highlighted-button">Encriptar</button>
-                <button class="normal-button">Desencriptar</button>
+                <button class="highlighted-button" id="btn-encriptar">Encriptar</button>
+                <button class="normal-button" id="btn-desencriptar">Desencriptar</button>
             </div>
         </section>
 
-        <section class="container-output">
-            <div>
-                <textarea name="outputtext" id="" cols="35" rows="10">
+        <section class="section-output">
+            <div class="container-output" id="container-output">
+                <div class="container-message">
+                    <div class="image inactive"></div>
+                    <div class="message">
+                        <b>Ningún mensaje fue encontrado.</b>
+                        <br><br>
+                        <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                </div>
+                <textarea class="inactive"  id="outputtext" name="outputtext"  cols="35" rows="10">
                 </textarea>
-                <button class="normal-button ">Copiar</button>
+                <button class="normal-button btnCopiar inactive" id="btn-copiar">Copiar</button>
             </div>
         </section>
         <!-- CONTENT END-->
     </main>
 
+    <!-- FOOTER -->
     <footer>
         Hecho con &#128150 por Nelly Mollocondo, 2023
     </footer>
 
-    <!-- <script src="./main.js"></script> -->
+    <script src="./main.js"></script>
 </body>
 </html>
