@@ -8,6 +8,7 @@ const outputText = document.querySelector('#outputtext');
 //messages
 const messageHeader = document.querySelector('.message b');
 const messageDescription = document.querySelector('.message p');
+const textCopyNotification = document.querySelector('#notificacion-copia');
 //container
 const containerOutput = document.querySelector('#container-output');
 const containerMessage = document.querySelector('.container-message');
@@ -93,6 +94,9 @@ const isInvalido = (value) => {
 
 const encriptar = () =>  {
     const valueInput = text.value;
+    if(!textCopyNotification.classList.contains('inactive')){
+        textCopyNotification.classList.add('inactive');
+    }
    
     if (!valueInput) {
         containerMessage.classList.remove('inactive');
@@ -129,6 +133,9 @@ const encriptar = () =>  {
 
 const desencriptar = () =>  {
     const valueInput = text.value;
+    if(!textCopyNotification.classList.contains('inactive')){
+        textCopyNotification.classList.add('inactive');
+    }
 
     if (!valueInput) {
         containerMessage.classList.remove('inactive');
@@ -167,6 +174,7 @@ const copy = () => {
     outputText.select();
     navigator.clipboard.writeText(outputText.value);
     outputText.value = "";
+    textCopyNotification.classList.remove('inactive');
     console.log("Texto Copiado");
 }
 

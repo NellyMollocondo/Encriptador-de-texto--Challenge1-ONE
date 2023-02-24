@@ -143,6 +143,15 @@ button:hover {
     color: var(--gray-400);    
     resize: none;
 }
+
+.section-output #notificacion-copia{
+    font-size: 1.8rem;
+    padding: 10px;
+    border-radius: 10px;
+    color: #247dea;
+    background-color: var(--white);
+    
+}
 /* CONTENT END */
 
 
